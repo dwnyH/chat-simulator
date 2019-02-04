@@ -1,0 +1,26 @@
+.chatUserContainer{
+    background-color: rgb(212, 151, 51);
+}
+
+.userProfile {
+    font-size: 30px;
+    padding: 20px;
+    font-weight: 800;
+}
+
+.chatMember {
+    padding: 20px;
+    font-weight: 600;
+    color: #c9c9c860;
+    font-size: 18px;
+}
+
+.connected {
+    color: rgb(128, 20, 128);
+}
+
+/* .member {
+    font-weight: 600;
+    color: #ffffe9;
+    font-size: 18px;
+} */

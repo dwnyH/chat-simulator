@@ -1,0 +1,17 @@
+.main{
+    display: grid;
+    grid-template-columns: 200px 600px;
+    height: 420px;
+}
+.chatContainer {
+    padding: 30px;
+    height: 400px;
+    background-color: rgb(255, 248, 235);
+}
+.chatInput {
+    height: 40px;
+    margin-top: 40px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    background-color: rgba(256, 256, 256, 0.7);
+}

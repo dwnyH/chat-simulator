@@ -1,0 +1,25 @@
+.user, .messageText {
+    display: inline-block;
+}
+
+.user {
+    font-weight: 600;
+    padding: 1px 20px 1px 1px;
+    color: rgb(141, 138, 138);
+}
+
+.messageText {
+    width: 500px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    color: rgb(46, 34, 26);
+    font-weight: 500;
+}
+
+.chatContents {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 300px;
+}
+

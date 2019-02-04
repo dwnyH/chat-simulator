@@ -1,0 +1,22 @@
+.topBar {
+    width: 800px;
+    background-color: rgb(66, 44, 18);
+    display: flex;
+    align-items: space-around;
+    justify-content: space-between;
+}
+
+.menu, .icon{
+    display: inline-block;
+    font-weight: 800;
+    padding: 3px;
+    color: rgb(255, 253, 241);
+}
+
+.menu {
+    padding-left: 20px;
+}
+
+.icons {
+    padding-right: 10px;
+}
