@@ -1,4 +1,4 @@
-import React, {Componet} from 'react';
+import React from 'react';
 import './ChatUsers.css';
 
 function ChatUsers(props) {
@@ -14,9 +14,10 @@ function ChatUsers(props) {
         <div className="chatUserContainer">
             <div className="userProfile">ken</div>
             <div className="chatMember">
-            {Object.keys(props.users).length
-                ? chatUsers
-                : null}
+                {Object.keys(props.users).length
+                    ? chatUsers
+                    : null
+                }
             </div>
         </div>
     );

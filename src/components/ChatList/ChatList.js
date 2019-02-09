@@ -3,37 +3,40 @@ import './ChatList.css';
 import MessageConvert from '../MessageConvert';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+    users: PropTypes.object,
+    messageText: PropTypes.array,
+};
+
 class ChatList extends Component {
     constructor(props) {
         super(props);
-        this.myRef = React.createRef();
+        this.scrollRef = React.createRef();
     }
 
     componentDidUpdate() {
-        this.myRef.current.scrollTop = this.myRef.current.scrollHeight;
+        this.scrollRef.current.scrollTop = this.scrollRef.current.scrollHeight;
     }
 
     render() {
-        const users = this.props.users;
-        const chatList = this.props.messageText.map((message) => (
-                    <div className="chat" key={message.id}>
-                        <div className="user">{users[message.userId].display_name}</div>
-                        <div className="messageText">
-                            <MessageConvert message={message.text} />
-                        </div>
-                    </ div>
-                ));
+        const {messageText, users} = this.props;
+        const chatList = messageText.map((message) => (
+                <div className="chat" key={message.id}>
+                    <div className="user">{users[message.userId].display_name}</div>
+                    <div className="messageText">
+                        <MessageConvert message={message.text} />
+                    </div>
+                </ div>
+            ));
 
-        return this.props.messageText.length
-            ? (
-                <div ref={this.myRef} className="chatContents">
+        return messageText.length
+            ? (<div ref={this.scrollRef} className="chatContents">
                     {chatList}
                 </div>
-            )
-            : (
-                <div className="chatContents"></div>
-            )
+              )
+            : (<div className="chatContents"></div>)
     }
 }
 
+ChatList.propTypes = propTypes;
 export default ChatList;

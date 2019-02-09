@@ -7,19 +7,8 @@ class MessageConvert extends Component {
         this.printBold = this.printBold.bind(this);
     }
 
-    printEmoji(text) {
-        text = text.replace(':)', '😀');
-        text = text.replace(':facepalm:', '🤦');
-        text = text.replace(':scream_cat:', '🙀');
-        text = text.replace(':ghost:', '👻');
-        text = text.replace(':sob:', '😭');
-
-        return text;
-    }
-
     printBold(text) {
         let textWithBold;
-
         const firstIndex = text.indexOf('*');
         const lastIndex = text.indexOf('*', firstIndex + 1);
 
@@ -31,9 +20,18 @@ class MessageConvert extends Component {
         return text;
     }
 
+    printEmoji(text) {
+        text = text.replace(':)', '😀');
+        text = text.replace(':facepalm:', '🤦');
+        text = text.replace(':scream_cat:', '🙀');
+        text = text.replace(':ghost:', '👻');
+        text = text.replace(':sob:', '😭');
+
+        return text;
+    }
+
     printIntalic(text) {
         let textWithItalic;
-
         const firstIndex = text.indexOf('_');
         const lastIndex = text.indexOf('_', firstIndex + 1);
 
@@ -41,6 +39,7 @@ class MessageConvert extends Component {
             textWithItalic = text.substring(0, firstIndex)+ text.substring(firstIndex + 1, lastIndex).italics() + text.substring(lastIndex+1);
             return textWithItalic;
         }
+
         return text;
     }
 

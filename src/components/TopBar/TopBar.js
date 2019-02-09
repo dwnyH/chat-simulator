@@ -1,4 +1,4 @@
-import React, {Componet} from 'react';
+import React from 'react';
 import './TopBar.css';
 
 function TopBar() {
@@ -11,7 +11,7 @@ function TopBar() {
                 <div className="icon">X</div>
             </div>
         </div>
-    )
+    );
 }
 
 export default TopBar;

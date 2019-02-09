@@ -4,7 +4,13 @@ import * as actions from '../../actions';
 import ChatList from '../../components/ChatList/ChatList';
 import ChatUsers from '../../components/ChatUsers/ChatUsers';
 import './ChatInfos.css'
+import PropTypes from 'prop-types';
 
+const propTypes = {
+    users: PropTypes.object,
+    messageText: PropTypes.array,
+    requestLists: PropTypes.func
+};
 
 class ChatInfos extends Component {
     async componentDidMount() {
@@ -12,11 +18,13 @@ class ChatInfos extends Component {
     }
 
     render() {
+        const { message, user } = this.props;
+
         return (
             <div className="main">
-                <ChatUsers users={this.props.user} />
+                <ChatUsers users={user} />
                 <div className="chatContainer">
-                    <ChatList messageText={this.props.message} users={this.props.user}/>
+                    <ChatList messageText={message} users={user}/>
                     <div className="chatInput"></div>
                 </div>
             </div>
@@ -25,14 +33,15 @@ class ChatInfos extends Component {
 }
 
 const mapStateToProps = (state) => {
+    const { message, users } = state.chatList;
     return {
-        message: Object.values(state.chatList.message),
-        user: state.chatList.users
+        message: Object.values(message),
+        user: users
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
-    requestLists: async() => {
+    async requestLists() {
         const chatPromise = await fetch('https://chat-simulator.firebaseio.com/chats.json');
         const chatDatas = await chatPromise.json();
 
@@ -60,9 +69,10 @@ const mapDispatchToProps = (dispatch) => ({
             }, chatData.delta);
         });
     }
-})
+});
 
+ChatInfos.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChatInfos)
+)(ChatInfos);
