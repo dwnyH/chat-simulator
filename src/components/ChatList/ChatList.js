@@ -19,7 +19,7 @@ class ChatList extends Component {
     }
 
     render() {
-        const {messageText, users} = this.props;
+        const { messageText, users } = this.props;
         const chatList = messageText.map((message) => (
                 <div className="chat" key={message.id}>
                     <div className="user">{users[message.userId].display_name}</div>
