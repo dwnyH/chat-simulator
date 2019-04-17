@@ -1,6 +1,9 @@
 # Chat Simulator
 
-React & Redux를 이용하여 채팅 기록을 재생할 수 있도록 하는 과제입니다.
+React & Redux를 이용하여 채팅 기록을 재생할 수 있도록 하는 프로젝트입니다.
+
+![preview](https://github.com/hiiiii11/chat-simulator/blob/master/public/%5BSHANA%5DChat%20Simulator%20-%20Chrome%202019-02-09%20%EC%98%A4%EC%A0%84%209_13_00.gif)
+
 
 ## Setup
 
